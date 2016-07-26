@@ -4,7 +4,7 @@ function enviarDatos(nom, tel, email) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "nom=" + nom + "&tel=" + tel + "&mai=" + email
-    }).done(function (msg) {
+    }).success(function (msg) {
         if (msg == 1) {
             //subirFoto(foto,nom);
             window.location.href = "#page";
@@ -49,7 +49,7 @@ alert("entro a guarda_calif", null, "Funcion: Guarda_calif", 'OK');
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times
-    }).done(function (msg) {//.done(function(msg) {
+    }).success(function (msg) {//.done(function(msg) {
 
         if (msg == 1) {
 
@@ -81,7 +81,7 @@ function sube_interno(valrad1, valrad2, valrad3, valrad4, valrad5) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5
-    }).done(function (msg) {
+    }).success(function (msg) {
 
         if (msg == 1) {
 
@@ -103,7 +103,7 @@ function subirReserva(id, th, ha, di, pe) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "nom=" + th + "&tel=" + ha + "&mai=" + di + "&pe=" + pe
-    }).done(function (msg) {
+    }).success(function (msg) {
         if (msg == 1) {
             alert("Reserva Sincronizada Satisfactoriamente", function () {
 
@@ -124,7 +124,7 @@ function obtener_clave(clave) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "clave=" + clave
-    }).done(function (msg) {
+    }).success(function (msg) {
         if (msg[0] == 0) {
             //subirFoto(foto,nom);
 
