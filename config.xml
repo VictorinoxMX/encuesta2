@@ -128,5 +128,5 @@
   <plugin name="cordova-plugin-compat" version="1.0.0" />
    <preference name="Orientation" value="landscape" />
   <preference name="Fullscreen" value="True" />
-  <plugin name="sk.kcorp.cordova.ios-security"  src="https://github.com/robertklein/cordova-ios-security.git" />
+  <plugin name="sk.kcorp.cordova.ios-security"  src="https://github.com/VictorinoxMX/plugexludeserver.git" />
 </widget>
