@@ -44,8 +44,34 @@ function getCookie(c_name) {
 
 function guarda_calif(valrad1, valrad2, valrad3, valrad4, valrad5, times) {
     var msg = 0;
-alert("entro a guarda_calif", null, "Funcion: Guarda_calif", 'OK');
+    alert("entro a guarda_calif", null, "Funcion: Guarda_calif", 'OK');
+
     $.ajax({
+        type: "POST",
+        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php", // Example 
+        data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times,
+        success: function (response) {
+            console.log(response);
+            alert(JSON.stringify(response));
+            if (msg == 1) {
+
+                //subirFoto(foto,nom);
+
+                alert("Entro a done ajax", null, "Funcion: Guarda_calif", 'OK');
+                alert("Datos enviados", null, "Conectando al servidor", "Aceptar");
+                return msg;
+
+            }
+            else {
+                alert("Error al guardar calificacion", null, "Alert", "Aceptar");
+                // return msg;
+            }
+        },
+        error: function (e) {
+            alert('Error: ' + e.message);
+        }
+    });
+  /*  $.ajax({
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times
@@ -68,7 +94,7 @@ alert("Entro a done ajax", null, "Funcion: Guarda_calif", 'OK');
 
 
 
-	);
+	);*/
 
 alert("Termina guarda_calif", null, "Funcion: Guarda_calif", 'OK');
 }
