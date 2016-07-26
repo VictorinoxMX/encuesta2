@@ -4,7 +4,7 @@ function enviarDatos(nom, tel, email) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "nom=" + nom + "&tel=" + tel + "&mai=" + email
-    }).complete(function (msg) {
+    }).success(function (msg) {
         if (msg == 1) {
             //subirFoto(foto,nom);
             window.location.href = "#page";
@@ -46,36 +46,13 @@ function guarda_calif(valrad1, valrad2, valrad3, valrad4, valrad5, times) {
     var msg = 0;
     alert("entro a guarda_calif", null, "Funcion: Guarda_calif", 'OK');
 
-    $.ajax({
-        type: "POST",
-        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php", // Example 
-        data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times,
-        success: function (response) {
-            console.log(response);
-            alert(JSON.stringify(response));
-            if (msg == 1) {
+   
 
-                //subirFoto(foto,nom);
-
-                alert("Entro a done ajax", null, "Funcion: Guarda_calif", 'OK');
-                alert("Datos enviados", null, "Conectando al servidor", "Aceptar");
-                return msg;
-
-            }
-            else {
-                alert("Error al guardar calificacion", null, "Alert", "Aceptar");
-                // return msg;
-            }
-        },
-        error: function (e) {
-            alert('Error: ' + e.message);
-        }
-    });
-  /*  $.ajax({
+   $.ajax({
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times
-    }).complete(function (msg) {//.done(function(msg) {
+   }).success(function (msg) {//.done(function(msg) {
 
         if (msg == 1) {
 
@@ -94,7 +71,7 @@ alert("Entro a done ajax", null, "Funcion: Guarda_calif", 'OK');
 
 
 
-	);*/
+	);
 
 alert("Termina guarda_calif", null, "Funcion: Guarda_calif", 'OK');
 }
@@ -107,7 +84,7 @@ function sube_interno(valrad1, valrad2, valrad3, valrad4, valrad5) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5
-    }).complete(function (msg) {
+    }).success(function (msg) {
 
         if (msg == 1) {
 
@@ -129,7 +106,7 @@ function subirReserva(id, th, ha, di, pe) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "nom=" + th + "&tel=" + ha + "&mai=" + di + "&pe=" + pe
-    }).complete(function (msg) {
+    }).success(function (msg) {
         if (msg == 1) {
             alert("Reserva Sincronizada Satisfactoriamente", function () {
 
@@ -150,7 +127,7 @@ function obtener_clave(clave) {
         type: "POST",
         url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
         data: "clave=" + clave
-    }).complete(function (msg) {
+    }).success(function (msg) {
         if (msg[0] == 0) {
             //subirFoto(foto,nom);
 
