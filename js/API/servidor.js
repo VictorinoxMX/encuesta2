@@ -2,8 +2,11 @@
 function enviarDatos(nom, tel, email) {
     $.ajax({
         type: "POST",
-        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
-        data: "nom=" + nom + "&tel=" + tel + "&mai=" + email
+        
+        data: "nom=" + nom + "&tel=" + tel + "&mai=" + email,
+        crossDomain: true,
+        cache: false,
+        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php"
     }).done(function (msg) {
         if (msg == 1) {
             //subirFoto(foto,nom);
@@ -49,9 +52,12 @@ function guarda_calif(valrad1, valrad2, valrad3, valrad4, valrad5, times) {
    
 
    $.ajax({
-        type: "POST",
-        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
-        data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times
+       type: "POST",
+       data: "&c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5 + "&times=" + times,
+       crossDomain: true,
+       cache: false,
+        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php"
+        
    }).done(function (msg) {//.done(function(msg) {
 
         if (msg == 1) {
@@ -82,8 +88,11 @@ function sube_interno(valrad1, valrad2, valrad3, valrad4, valrad5) {
 
     $.ajax({
         type: "POST",
-        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php",
-        data: "c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5
+        data: "c1=" + valrad1 + "&c2=" + valrad2 + "&c3=" + valrad3 + "&c4=" + valrad4 + "&c5=" + valrad5,
+        crossDomain: true,
+        cache: false,
+        url: "http://www.victorinox.com.mx/WebServiceApps/saveopinion.php"
+
     }).done(function (msg) {
 
         if (msg == 1) {
