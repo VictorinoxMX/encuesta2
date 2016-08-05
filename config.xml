@@ -26,17 +26,9 @@
     <allow-intent href="market:*" />
   </platform>
   <platform name="ios">
-    <allow-intent href="itms:*" />
-    <allow-intent href="itms-apps:*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+    
 
-      <config-file platform="ios" target="*-Info.plist" parent="NSAppTransportSecurity">
-        <dict>
-          <key>NSAllowsArbitraryLoads</key>
-          <true/>
-        </dict>
-      </config-file>
+      
 
   </platform>
   <platform name="android">
@@ -103,6 +95,16 @@
     <splash src="res/screens/android/screen-xhdpi-portrait.png" density="port-xhdpi" />
   </platform>
   <platform name="ios">
+    <config-file platform="ios" target="*-Info.plist" parent="NSAppTransportSecurity">
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+    </config-file>
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
     <splash src="res/screens/ios/screen-iphone-portrait.png" width="320" height="480" />
     <splash src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" height="960" />
     <splash src="res/screens/ios/screen-ipad-portrait.png" width="768" height="1024" />
